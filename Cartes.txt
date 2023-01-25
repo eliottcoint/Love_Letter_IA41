@@ -1,0 +1,60 @@
+Règle :
+- 2 joueurs
+- Plusieurs manches
+- Manche remporté par le denrier joueur encore en jeu ou par celui ayant la carte de plus haute valeur à la fin de la pioche
+- Manche remporté : points faveur gagnés
+
+Mise en place :
+- Commence par 1 carte chacun
+- On brule une carte de la pioche
+- 3 cartes sont posé face visible devant eux, elles ne seront pas utilisé
+
+Déroulement :
+- Pioche -> Pose une carte devant et utilise l'effet
+- Cartes et leur effet :
+0 Espionne : Si une seule des 2 cartes espionne est en jeu, le joueur l'ayant jouée gagne un point faveur.
+1 Garde : Le joueur nomme une carte (sauf Garde). Si c'est la carte que l'adversaire a en main, alors l'adversaire est éliminé de la manche.
+2 Prêtre : Le joueur regarde la carte de l'adversaire.
+3 Baron : Les deux joueurs se montrent leur carte : celui dont la valeur de la carte est la plus faible est éliminé de la manche. Si leurs valeurs sont égales, alors personne n'est éliminé.
+4 Servante : Le joueur ne peut pas subir l'effet d'autres cartes pendant un tour, jusqu'à ce qu'il joue de nouveau.
+5 Prince : Le joueur choisit un joueur (lui compris) qui défausse sa carte et en pioche une autre immédiatement.
+6 Chancelier : Le joueur prend 2 cartes dans la pioche en plus de celle qu'il a dans les mains, et remet 2 cartes de son choix dans le bas de la pioche.
+7 Roi : Le joueur échange sa carte avec celle d'un autre joueur de son choix.
+8 Comtesse : Doit obligatoirement être jouée si le joueur qui la possède a aussi en main un Prince ou un Roi.
+9 Princesse : Si elle doit être défaussée alors le joueur qui l'avait est éliminé de la manche.
+
+Fin de partie :
+- Reste qu'un joueur ou plus de pioche
+- Si plus de pioche, on regarde celui qui a la plus fort carte
+- Si ex-aequo, on regarde l'ensemble des cartes jouées et on fait la somme, la plus grande gagne
+- Nombre de faveur à avoir (version Z-man):
+2 joueurs : 6 Pions Faveur (contre 5 dans la version de base)
+
+carte1=Carte("Espionne",2,0)
+carte2=Carte("Garde",6,1)
+carte3=Carte("Prêtre",2,2)
+carte4=Carte("Baron",2,3)
+carte5=Carte("Servante",2,4)
+carte6=Carte("Prince",2,5)
+carte7=Carte("Chancelier",2,6)
+carte8=Carte("Roi",1,7)
+carte9=Carte("Comtesse",1,8)
+carte10=Carte("Princesse",1,9)
+
+0 : 100 %
+1 : 80 %
+2 : 90 %
+3 : 50 %
+4 : 70 %
+5 : 60 %
+6 : 40 %
+7 : 30 %
+8 : 20 %
+9 : 0 % 
+
+choix de if:
+
+if main_adversaire est vide : (on connait pas la carte de J1)
+    choisir la carte avec la plus forte proba
+else 
+
